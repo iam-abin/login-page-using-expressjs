@@ -1,0 +1,28 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.row{
+    height: 100vh;
+    background: rgb(2,0,36);
+background: linear-gradient(175deg, rgba(2,0,36,1) 0%, rgba(28,172,201,1) 100%, rgba(35,126,140,1) 100%);
+   
+}
+
+.text-box{
+    width: 80%;
+    height:42px
+}
+.btn{
+    width: 25%;
+    font-weight: 500;
+}
+.card{
+    border-radius: 25px;
+    background-color: rgb(249, 250, 252);
+    
+}
+

@@ -1,11 +1,11 @@
 var express=require('express');
 var router=express.Router();
 
+
 const credential={
     email:"admin@gmail.com",
     password:"admin"
 }
-
 
 //login user
 router.post('/login',(req,res)=>{
@@ -23,7 +23,7 @@ router.get('/dashboard',(req,res)=>{
     if(req.session.user){
         res.render('dashboard',{user:req.session.user})
     }else{
-        res.send("Unauthorized user.")
+        res.send("Unauthorized User.")
     }
 })
 
@@ -35,7 +35,7 @@ router.get('/logout',(req,res)=>{
             console.log(err);
             res.send("Error");
         }else{
-            res.render('base',{title:"Express",logout:"logout SuccessFully...!"});
+            res.render('base',{title:"LOGIN",logout:"logout SuccessFully...!"});
         }
     })
 })

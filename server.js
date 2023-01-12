@@ -8,7 +8,7 @@ const nocache=require('nocache');
 
 const app=express();
 
-const port=process.env.PORT||5000;
+const port=process.env.PORT||3000;
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
@@ -24,7 +24,10 @@ app.use('/static',express.static(path.join(__dirname,'public')));
 app.use(session({
     secret:'secret here',
     resave:false,
-    saveUninitialized:true
+    saveUninitialized:false,
+    cookie : {
+        maxAge : 600000
+    }
 }))
 
 app.use('/route',router);
@@ -34,15 +37,14 @@ app.get('/',(req,res,next)=>{
     if(req.session.user){
         res.render('dashboard',{user:req.session.user});
         next();
-
       }
       else{
-        res.render('base',{title:"Login Form"})
+        res.render('base',{title:"LOGIN"})
     }
 })
 
 
 
 app.listen(port,()=>{
-    console.log("Server started...");
+    console.log("Server started at http://localhost:3000/...");
 })

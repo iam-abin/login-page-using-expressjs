@@ -4,6 +4,7 @@
 
 #### install following extensions in vscode (its optional)
 
-- Save Typing
-- Live Server
-
+- EJS language support
+- Code Runner
+- Prettier - Code formatter
+- Bracket Pair Colorization Toggler
